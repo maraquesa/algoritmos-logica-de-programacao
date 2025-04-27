@@ -4,7 +4,7 @@ var
    
 Procedimento Proximofibonacci (var A, B: inteiro)
 inicio
-       F <- F1 + F2
+       F <- A + B
        Escreva (F)
        B <- A
        A <- F
