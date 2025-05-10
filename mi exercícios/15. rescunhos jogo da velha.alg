@@ -19,19 +19,37 @@ inicio
       fimpara
 fimfuncao
 
-funcao verificavertical() : logico
+funcao validavertical() : logico
 inicio
       para c <- 1 ate 3 faca
            i <- 0
            para l <- 1 ate 3 faca
-                se (jogo[l,c] = " O") ou (jogo[l,c] = " X") entao
-                   valida <- valida +1
-                   se (valida = 3) entao
-                      valida <-
-                   fimse
+                se (jogo[l,c] = " O") entao
+                   i <- i +1
                 fimse
            fimpara
+           se (i = 3) entao
+              varjogada <- verdadeiro
+           senao
+              varjogada <- falso
+           fimse
       fimpara
+
+      para c <- 1 ate 3 faca
+           i <- 0
+           para l <- 1 ate 3 faca
+                se (jogo[l,c] = " X") entao
+                   i <- i +1
+                fimse
+           fimpara
+           se (i = 3) entao
+              varjogada <- verdadeiro
+           senao
+              varjogada <- falso
+           fimse
+      fimpara
+
+      retorne (varjogada)
 fimfuncao
 
 funcao verificadiagonal () : logico
